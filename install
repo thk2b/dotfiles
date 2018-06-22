@@ -9,20 +9,26 @@ check_if_installed(){
 check_if_installed zsh
 check_if_installed vim
 
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-ln -fi ./vim/vimrc ~/.vimrc
-#override default .zshrc created by oh-my-zsh
-ln -fi ./zsh/zshrc ~/.zshrc
-
-
 if ! [ -z "${SHELL##*zsh*}" ];
 	then
 		echo "Setting zsh as default shell."
 		chsh -s `which zsh`
 		echo "zsh is now the default shell."
 fi
+
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+#VIM
+
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+git clone git://github.com/jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
+
+ln -fi ./vim/vimrc ~/.vimrc
+
+#ZSH
+
+#override default .zshrc created by oh-my-zsh
+ln -fi ./zsh/zshrc ~/.zshrc
 
