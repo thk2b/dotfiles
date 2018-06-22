@@ -1,0 +1,21 @@
+check_if_installed(){
+	if ! [ -x "$(command -v $1)" ];
+	then
+		echo "Sorry, $1 is not installed. Please install and try again."
+		return 1
+	fi
+}
+
+check_if_installed zsh
+check_if_installed vim
+
+ln -fi ./vim/vimrc ~/.vimrc
+ln -fi ./zsh/zshrc ~/.zshrc
+
+if ! [ -z "${SHELL##*zsh*}" ];
+	then
+		echo "Setting zsh as default shell."
+		chsh -s `which zsh`
+		echo "zsh is now the default shell."
+fi
+
