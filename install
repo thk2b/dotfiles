@@ -8,6 +8,7 @@ check_if_installed(){
 
 check_if_installed zsh
 check_if_installed vim
+check_if_installed tmux
 
 if ! [ -z "${SHELL##*zsh*}" ];
 	then
@@ -32,3 +33,6 @@ ln -fi ./vim/vimrc ~/.vimrc
 #override default .zshrc created by oh-my-zsh
 ln -fi ./zsh/zshrc ~/.zshrc
 
+#TMUX
+
+ln -fi ./tmux/tmux.conf ~/.tmux.conf
