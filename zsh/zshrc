@@ -6,7 +6,11 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
   git
+  vi-mode
+  history-substring-search
 )
+
+KEYTIMEOUT=1
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
 
