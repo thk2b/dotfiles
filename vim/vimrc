@@ -4,5 +4,7 @@ set shiftwidth=4
 set relativenumber 
 set number
 
+set t_Co=256
+
 execute pathogen#infect()
 
