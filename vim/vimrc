@@ -4,7 +4,9 @@ set shiftwidth=4
 set relativenumber 
 set number
 
-set t_Co=256
+syntax on
+colorscheme onedark
 
+let g:airline_theme='onedark'
 execute pathogen#infect()
 
