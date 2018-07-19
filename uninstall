@@ -1,0 +1,24 @@
+#!/bin/sh
+
+restore_backup_file(){
+	if [ -f ./backup/${1} ];
+	then
+		mv ./backup/${1} ~/${1} \
+			&& echo "restored backed up $1 to ~" \
+			|| (echo "failed to restore backed up $1" \
+				&& exit 1)
+	fi
+}
+
+rm -rf ~/.zshrc ~/.oh-my-zsh \
+	~/.vimrc ~/.vim \ 
+	~/.tmux.conf
+
+restore_backup_file .zshrc
+restore_backup_file .tmux.conf
+restore_backup_file .vimrc
+rm -rf ./backup
+
+echo "removed dotfiles..."
+echo "you may want to reset your shell (chsh -s), and delete this directory."
+echo "bye!"
