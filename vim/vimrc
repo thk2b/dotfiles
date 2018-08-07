@@ -3,6 +3,8 @@ set tabstop=4
 set shiftwidth=4
 set relativenumber 
 set number
+set list
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 syntax on
 colorscheme onedark
