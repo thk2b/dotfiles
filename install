@@ -22,10 +22,13 @@ check_if_installed zsh
 check_if_installed vim
 check_if_installed tmux
 
-mkdir ./backup
-backup_file .zshrc
-backup_file .tmux.conf
-backup_file .vimrc
+if ! [ -x ./backup ];
+then
+	mkdir ./backup
+	backup_file .zshrc
+	backup_file .tmux.conf
+	backup_file .vimrc
+fi
 
 if ! [ -z "${SHELL##*zsh*}" ];
 	then
