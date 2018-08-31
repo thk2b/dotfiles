@@ -17,3 +17,5 @@ cd_ls(){
 	ls
 }
 alias cd="cd_ls"
+
+DisableWheelToCursor=on
