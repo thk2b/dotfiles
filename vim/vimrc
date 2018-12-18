@@ -4,7 +4,7 @@ set shiftwidth=4
 set relativenumber 
 set number
 set list
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:>-,space:.,trail:~,extends:>,precedes:<
 set nrformats+=alpha
 
 syntax on
