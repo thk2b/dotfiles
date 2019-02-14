@@ -17,5 +17,7 @@ cd_ls(){
 	ls
 }
 alias cd="cd_ls"
+alias python=python3
+alias pip=pip3
 
 DisableWheelToCursor=on
